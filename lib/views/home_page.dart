@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/views/widgets/custom_notes_item.dart';
 import 'package:notes_app/views/widgets/custom_search_icon.dart';
+import 'package:notes_app/views/widgets/notes_body.dart';
 import 'package:notes_app/views/widgets/notes_list_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,37 +19,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.withOpacity(0.3),
-
-      body:   Padding(
-        padding: EdgeInsets.all(22.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Notes',style: TextStyle(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),),
-                CustomSearchIcon(),
-              ],
-            ),
-            Expanded(child: NotesListView()),
-
-
-
-
-
-
-
-          ],
-        ),
+      floatingActionButton:FloatingActionButton(
+        onPressed: (){},
+        child:const Icon(Icons.add),
       ),
+      body: NotesBody(),
     );
   }
 }
