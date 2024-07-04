@@ -20,7 +20,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey.withOpacity(0.3),
       floatingActionButton:FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          showModalBottomSheet(context: context, builder:(context){
+            return Container();
+          } )
+        },
         child:const Icon(Icons.add),
       ),
       body: NotesBody(),
