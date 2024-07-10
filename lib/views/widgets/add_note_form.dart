@@ -12,7 +12,6 @@ class AddNoteForm extends StatefulWidget {
 
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
-
   AutovalidateMode autovalidateMode =AutovalidateMode.disabled;
   String? title,subTitle;
 
@@ -30,7 +29,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onSaved: (value){
               title=value;
             },
-            hintText: 'Title',
+            hintText: 'title',
             contentPadding: 20,
           ),
           SizedBox(

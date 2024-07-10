@@ -26,7 +26,8 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
-              context: context, builder:(context){
+              context: context,
+              builder:(context){
             return AddNoteBottomSheet();
           } );
         },
