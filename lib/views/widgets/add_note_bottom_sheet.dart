@@ -19,26 +19,30 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      decoration: const BoxDecoration(
-        color: Colors.grey,
+    return BlocProvider(
+      create: (context)=>AddNotesCubit(),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        decoration: const BoxDecoration(
+          color: Colors.grey,
+        ),
+        child: BlocConsumer<AddNotesCubit, AddNoteStates>(
+            listener: (context, state) {
+          if (state is AddNoteFaluire) {
+             print('there was an error${state.errorMessage}');
+          } else if (state is AddNoteSuccess) {
+            SnackBar(content: Text('the operation succeded'),backgroundColor: Colors.deepOrange,duration: Duration(seconds: 2),);
+            Navigator.pop(context);
+          }
+        }, builder: (context, state) {
+          return ModalProgressHUD(
+            inAsyncCall: state is AddNoteStates ? true : false,
+            child: SingleChildScrollView(
+              child: AddNoteForm(),
+            ),
+          );
+        }),
       ),
-      child: BlocConsumer<AddNotesCubit, AddNoteStates>(
-          listener: (context, state) {
-        if (state is AddNoteFaluire) {
-          return print('there was an error${state.errorMessage}');
-        } else if (state is AddNoteSuccess) {
-          Navigator.pop(context);
-        }
-      }, builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is AddNoteStates ? true : false,
-          child: SingleChildScrollView(
-            child: AddNoteForm(),
-          ),
-        );
-      }),
     );
   }
 }
