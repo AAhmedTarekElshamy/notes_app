@@ -20,7 +20,7 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context)=>AddNotesCubit(),
+      create: (context) => AddNotesCubit(),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         decoration: const BoxDecoration(
@@ -29,14 +29,18 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
         child: BlocConsumer<AddNotesCubit, AddNoteStates>(
             listener: (context, state) {
           if (state is AddNoteFaluire) {
-             print('there was an error${state.errorMessage}');
+            print('there was an error${state.errorMessage}');
           } else if (state is AddNoteSuccess) {
-            SnackBar(content: Text('the operation succeded'),backgroundColor: Colors.deepOrange,duration: Duration(seconds: 2),);
+            SnackBar(
+              content: Text('the operation succeded'),
+              backgroundColor: Colors.deepOrange,
+              duration: Duration(seconds: 2),
+            );
             Navigator.pop(context);
           }
         }, builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is AddNoteStates ? true : false,
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
             child: SingleChildScrollView(
               child: AddNoteForm(),
             ),
