@@ -18,11 +18,11 @@ class CustomButton extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 55,
         child: Center(
-          child:isLoading? CircularProgressIndicator(
+          child:isLoading? const CircularProgressIndicator(
             color: Colors.black,
           ): Text(
             text,
-            style: TextStyle(
+            style:const TextStyle(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,

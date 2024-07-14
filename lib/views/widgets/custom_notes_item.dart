@@ -13,17 +13,17 @@ class CustomNoteItem extends StatelessWidget {
       },
 
       child: Container(
-        margin: EdgeInsets.only(top: 16),
-        padding: EdgeInsets.only(top: 20,bottom: 24,left: 16,right: 16 ),
+        margin:const EdgeInsets.only(top: 16),
+        padding:const EdgeInsets.only(top: 20,bottom: 24,left: 16,right: 16 ),
         decoration: BoxDecoration(
-          color: Color(0xffffcd7a),
+          color:const Color(0xffffcd7a),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              contentPadding:EdgeInsets.all(0),
+              contentPadding:const EdgeInsets.all(0),
               title: Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text('flutter Tips ',style: TextStyle(
@@ -42,7 +42,7 @@ class CustomNoteItem extends StatelessWidget {
               ),
               trailing:  IconButton(
                   onPressed: (){},
-                  icon: Icon( FontAwesomeIcons.trash,size: 25,color: Colors.black,)),
+                  icon:const Icon( FontAwesomeIcons.trash,size: 25,color: Colors.black,)),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 8.0),

@@ -5,10 +5,10 @@ class EditNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Color(0xff82D2D2D) ,
       body: Padding(
-        padding: const EdgeInsets.all(22.0),
+        padding: EdgeInsets.all(22.0),
         child: Column(
           children: [
             SizedBox(

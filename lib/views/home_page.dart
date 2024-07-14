@@ -23,17 +23,18 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton:FloatingActionButton(
         onPressed: (){
           showModalBottomSheet(
+            isScrollControlled: true,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
               context: context,
               builder:(context){
-            return AddNoteBottomSheet();
+            return const AddNoteBottomSheet();
           } );
         },
         child:const Icon(Icons.add),
       ),
-      body: NotesBody(),
+      body:const NotesBody(),
     );
   }
 }

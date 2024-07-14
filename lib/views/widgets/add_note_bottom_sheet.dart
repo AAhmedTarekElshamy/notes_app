@@ -22,7 +22,7 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
     return BlocProvider(
       create: (context) => AddNotesCubit(),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding:  EdgeInsets.only(left: 16.0,right: 16.0,bottom: MediaQuery.of(context).viewInsets.bottom),
         decoration: const BoxDecoration(
           color: Colors.grey,
         ),
@@ -31,7 +31,7 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
           if (state is AddNoteFaluire) {
             print('there was an error${state.errorMessage}');
           } else if (state is AddNoteSuccess) {
-            SnackBar(
+           const SnackBar(
               content: Text('the operation succeded'),
               backgroundColor: Colors.deepOrange,
               duration: Duration(seconds: 2),
@@ -39,9 +39,9 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
             Navigator.pop(context);
           }
         }, builder: (context, state) {
-          return AbsorbPointer(
+          return  AbsorbPointer(
             absorbing: state is AddNoteLoading ? true : false,
-            child: SingleChildScrollView(
+            child: const SingleChildScrollView(
               child: AddNoteForm(),
             ),
           );

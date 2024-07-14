@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'custom_search_icon.dart';
 class CustomAppBar extends StatelessWidget {
-    CustomAppBar({super.key, required this.title, required this.icon});
+  const  CustomAppBar({super.key, required this.title, required this.icon});
   final String? title;
   final IconData icon;
   @override
@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
     return   Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title!,style: TextStyle(
+        Text(title!,style:const TextStyle(
           fontFamily: 'Poppins',
           color: Colors.white,
           fontSize: 30,

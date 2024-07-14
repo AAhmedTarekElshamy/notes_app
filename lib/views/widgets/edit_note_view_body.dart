@@ -9,8 +9,8 @@ class EditNoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return const Column(
+      children:[
         CustomAppBar(
           title: 'Edit Note',
           icon: FontAwesomeIcons.check,

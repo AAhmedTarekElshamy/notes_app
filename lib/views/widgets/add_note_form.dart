@@ -26,7 +26,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autovalidateMode,
       child:   Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           CustomTextField(
@@ -36,7 +36,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hintText: 'title',
             contentPadding: 20,
           ),
-          SizedBox(
+          const  SizedBox(
             height: 25,
           ),
           CustomTextField(
@@ -47,7 +47,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
             contentPadding: 30,
           ),
-          SizedBox(
+          const   SizedBox(
             height: 25,
           ),
           BlocBuilder<AddNotesCubit,AddNoteStates>(
