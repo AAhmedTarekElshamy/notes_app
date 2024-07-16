@@ -6,7 +6,6 @@ import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
 import 'package:notes_app/views/widgets/notes_body.dart';
 import '../cubits/notes_cubit/notes_cubit.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -17,10 +16,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: Scaffold(
-        backgroundColor: Colors.grey.withOpacity(0.3),
+    return Scaffold(
+        backgroundColor: Color(0xff2d2d2d),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
@@ -35,8 +32,8 @@ class _HomePageState extends State<HomePage> {
           },
           child: const Icon(Icons.add),
         ),
-        body: const NotesBody(),
-      ),
+        body:  NotesBody(),
+
     );
   }
 }

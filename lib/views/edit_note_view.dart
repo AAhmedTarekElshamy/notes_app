@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/edit_note_view_body.dart';
 class EditNoteView extends StatelessWidget {
-  const EditNoteView({super.key});
-
+  const EditNoteView({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       backgroundColor: Color(0xff82D2D2D) ,
       body: Padding(
         padding: EdgeInsets.all(22.0),
@@ -14,7 +15,7 @@ class EditNoteView extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            EditNoteViewBody(),
+            EditNoteViewBody(note: note,),
           ],
         ),
       ),
