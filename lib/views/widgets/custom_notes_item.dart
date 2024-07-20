@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 
@@ -19,7 +20,8 @@ class CustomNoteItem extends StatelessWidget {
         margin:const EdgeInsets.only(top: 16),
         padding:const EdgeInsets.only(top: 20,bottom: 24,left: 16,right: 16 ),
         decoration: BoxDecoration(
-          color:const Color(0xffffcd7a),
+          color: Color(note.color)??Colors.deepOrangeAccent,
+
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
@@ -30,8 +32,8 @@ class CustomNoteItem extends StatelessWidget {
               title: Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text(note.title,style: TextStyle(
-
                   color: Colors.black.withOpacity(.8),
+                  //Colors.white,
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),),
